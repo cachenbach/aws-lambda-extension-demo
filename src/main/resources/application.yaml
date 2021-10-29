@@ -1,0 +1,20 @@
+ch:
+  christian_achenba:
+    extension:
+      ExtensionClient/mp-rest/url: http://${AWS_LAMBDA_RUNTIME_API}/2020-01-01/extension
+      ExtensionClient/mp-rest/scope: javax.inject.Singleton
+extensionName: aws-lambda-extension-demo-1.0.0-SNAPSHOT-runner
+
+registerRequest:
+  events:
+    - INVOKE
+    - SHUTDOWN
+
+quarkus:
+  log:
+    level: INFO
+  s3:
+    sync-client:
+      type: url
+  http:
+    port: 8081
